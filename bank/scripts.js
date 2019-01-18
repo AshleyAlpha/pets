@@ -69,3 +69,14 @@ var config = {
     storageBucket: "",
     messagingSenderId: "316520824490"
 };
+firebase.initializeApp(config);
+var db = firebase.database();
+try {
+    firebase
+        .database()
+        .ref()
+        .child("User")
+        .push(newContact).key;
+} catch (err) {
+    console.log(err);
+}
