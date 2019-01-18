@@ -1,9 +1,9 @@
-ox.objectbasics.BankAccount = function (name, balance) {
+var Ox = function (name, balance) {
     this.name = name;
     this.balance = balance;
 }
 
-ox.objectbasics.BankAccount.prototype.deposit = function (amount) {
+Ox.prototype.deposit = function (amount) {
     this.balance += amount;
 };
 

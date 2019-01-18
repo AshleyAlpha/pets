@@ -1,67 +1,61 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bank Account</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="bank_account.js"></script>
-    <script src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous" />
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>BANK ACCOUNT</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Welcome to Andersonne Bank</h1>
-        <h1>E-Banking</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Your Details:</h2>
-                <form id="new-contact">
-                    <div class="form-group">
-                        <label for="new-full-name">Full Name</label>
-                        <input type="text" class="form-control" id="new-full-name" />
-                    </div>
-                    <div class="form-group">
-                        <label for="new-city-name">Initial Deposit</label>
-                        <input type="text" class="form-control" id="new-city" />
-                    </div>
-
-                    <h2> Deposit or Withdraw</h2>
-                    <div class="form-group">
-                        <label for="new-phone-number">Mobile Number</label>
-                        <input type="text" class="form-control" id="new-phone-number" />
-                    </div>
-                    <div class="form-group">
-                        <label for="new-e-mail">E-mail</label>
-                        <input type="text" class="form-control" id="new-e-mail" />
-                    </div>
-                    <div class="form-group">
-                        <label for="new-id">Proposed User ID</label>
-                        <input type="text" class="form-control" id="new-id" />
-                    </div>
-                    <button type="submit" class="btn">Submit</button>
-
-                </form>
-                <div id="hidden1">
+        <div class="jumbotron">
+            <h1>Welcome to the Andy Bank</h1>
+            <h2>E-Banking</h2>
+            <div class="container"></div>
+            <div class="row">
+                <div class="col-md-6">
                     <h2>Your Details:</h2>
-                    <ul id="contacts"></ul>
+                    <form id="new-contact">
+                        <div class="form-group">
+                            <label for="new-full-name">Full Name</label>
+                            <input type="text" class="form-control" id="new-full-name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="new-city-name">Mobile Number</label>
+                            <input type="text" class="form-control" id="new-city" />
+                        </div>
                 </div>
-            </div>
-            <div class="col-md-6" id="hidden2">
-                <div id="show-contact">
-                    <h2></h2>
-                    <p>Full Name: <span class="full-name"></span></p>
-                    <p>City/Address: <span class="city-name"></span></p>
-                    <p>Mobile Number: <span class="phone"></span></p>
-                    <p>E-mail: <span class="email"></span></p>
-                    <p>Proposed User ID: <span class="id"></span></p>
+
+
+                <div class="form-group">
+                    <label for="new-phone-number">Initial Deposit</label>
+                    <input type="text" class="form-control" id="new-phone-number" />
                 </div>
-                <h3>Details saved</h3>
-            </div>
-        </div>
-    </div>
+                </form>
+                <button type="submit" class="btn">Submit</button>
+                <div class="col-md-4">
+                    <div class="round-total>
+                                    <button id=" hold" type="button" name="button"
+                        class="btn bg-danger">Current
+                        Balance</button>
+                    </div>
+
+                </div>
+
+
+
+</body>
+
+</html>
+
+
 </body>
 
 </html>
