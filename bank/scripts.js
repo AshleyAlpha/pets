@@ -30,3 +30,17 @@ $(document).ready(function () {
                             inputtedEmail,
                             inputtedId
                         );
+                        $("ul#contacts").append(
+                            "<li><span class='contact'>" + newContact.fullName() + "</span></li>"
+                        );
+                        $(".contact")
+                            .last()
+                            .click(function () {
+                                    $("#show-contact").show();
+                                    $("#show-contact h2").text(newContact.fullName);
+                                    $("#show-contact h2")
+                                        .first()
+                                        .click(function () {
+                                            $("h3").toggle();
+                                            // $(this).remove();
+                                        });
