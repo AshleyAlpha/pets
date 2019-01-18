@@ -1,5 +1,5 @@
 // business logic
-function details(full, city, phone, email, id) {
+function Contact(full, city, phone, email, id) {
     this.fullName = full;
     this.cityName = city;
     this.userEmail = email;
@@ -16,7 +16,7 @@ $(document).ready(function () {
     $("#hidden2").hide();
     $("form#new-contact").submit(function (event) {
         alert(
-            "You are now done registering. Thank  you for banking with our E-banking system."
+            "You are now done registering. Thank you for using our E-banking system."
         );
         var inputtedFirstName = $("input#new-full-name").val();
         var inputtedLastName = $("input#new-city-name").val();
