@@ -23,3 +23,10 @@ $(document).ready(function () {
                         var inputtedPhone = $("input#new-phone-number").val();
                         var inputtedEmail = $("input#new-e-mail").val();
                         var inputtedId = $("input#new-id").val();
+                        var newContact = new Contact(
+                            inputtedFullName,
+                            inputtedCityName,
+                            inputtedPhone,
+                            inputtedEmail,
+                            inputtedId
+                        );
