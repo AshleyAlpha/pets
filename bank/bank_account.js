@@ -13,5 +13,5 @@ ox.objectbasics.BankAccount.prototype.withdraw = function (amount) {
 
 
 ox.objectbasics.BankAccount.prototype.toString = function () {
-    return "Name: " + this.name + "Balance:" + this.balance
+    return "Name: " + this.name + "Balance: rwf" + this.balance
 };
