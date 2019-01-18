@@ -80,3 +80,17 @@ try {
 } catch (err) {
     console.log(err);
 }
+var query = firebase
+    .database()
+    .ref("User")
+    .limitToFirst(20);
+query
+    .once("value")
+    .then(function (snapshot) {
+        snapshot.forEach(renderSingleSnapshot);
+    })
+    .then(function () {
+        $(document)
+            .find("ul#contacts")
+            .html(markup);
+    });
