@@ -6,4 +6,7 @@ $(document).ready(function () {
     console.log(peter.toString());
     peter.deposit(50);
     console.log(peter.toString());
+    peter.withdraw(10);
+    console.log(peter.toString());
+
 });
