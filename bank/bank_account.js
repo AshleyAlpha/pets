@@ -29,6 +29,17 @@ $(document).ready(function () {
                             $("#deposit").hide();
                         });
 
+                        $("#tdeposit").click(function () {
+                            var depositAmount = parseInt($("input#deposit-amount").val());
+                            var newBalance = inputDeposit + depositAmount;
+                            console.log(newBalance)
+
+                            $("#ac-balance").show();
+                            $("#bank-deposit").hide();
+                            $("#user-info").hide();
+                            $("#demo").text(newBalance)
+                        })
+
 
 
 
