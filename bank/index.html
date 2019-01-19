@@ -1,64 +1,96 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bootstrap.css" rel="stylesheet" type="text/css" media="screen">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous" />
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
     <script src="bank_account.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <title>BANK ACCOUNT</title>
-</head>
-
-<body>
-    <div id="love">
-            <h1>Welcome to the Andy Bank</h1>
-            <h2>Your Details:</h2>
-            </div>
-            <div class="container">
-            <div id="detail">
-               <div id ="new-contact" >
-                    <label for="fullname">Full Name</label><br>
-                    <input type="text" id="fullname"><br>
-                </div>
-                <div id="new-adress">
-                    <label for="Initial deposit"><strong>INITIAL DEPOSIT</strong></label><br>
-                    <input type="text" id="initial-deposit" required>
-                  </div><br>
-
-                  <button type="submit" id="submit"><strong>Create Account</strong></button>
-    </form>
-    <div id="user-info">
-            <p><strong>Full Name</strong></p>GIT   
-            <h1></h1><br>
-    <p><strong>Initial Balance</strong></p>
-    <h4>Transactions</h4><br>
-    <button type="button" id="deposit"><strong>Deposit</strong></button>
-    <button type="button" id="withdraw"><strong>Withdraw</strong></button>
-        </div>
+  </head>
+  <body>
+    <div id="head">
+      <h1>CLOUT BANK</h1>
+      <h3><em>Secure your Money Secure your future</em></h3>
     </div>
-    <div id="bank-withdraw">
-      
-            <div id="">
-               <h3>Enter amount to withdraw:</h3><br>
-                <label>Amount</label><br>
-                <input type="number" id="withdraw-amount"><br>
-               
-                <button type="button" id="withdraw"><strong>Withdraw</strong></button>
-            </div>
+
+    <div class="container">
+      <form id="contact">
+        <div id="new-contact">
+          <label for="firstname">First Name</label><br />
+          <input type="text" id="firstname" /><br />
+
+          <label for="secondname">Second Name</label><br />
+          <input type="text" id="lastname" /><br />
         </div>
-        <div id="ac-balance">
-                <h3>Your Account Balance is now:</h3>
-                <h1 id="demo">RWF</h1>
-                 </div>
-</body>
+        <div id="new-adress">
+          <label for="Initial deposit"><strong>INITIAL DEPOSIT</strong></label
+          ><br />
+          <input type="text" id="initial-deposit" required />
+        </div>
+        <br />
+        <button type="submit" id="submit">
+          <strong>Create Account</strong>
+        </button>
+      </form>
 
-</html>
+      <div id="user-info">
+        <p><strong>Name</strong></p>
+        <h1></h1>
+        <br />
+        <p><strong>E-mail</strong></p>
+        <h2></h2>
+        <br />
+        <p><strong>Phone Number</strong></p>
+        <h3></h3>
+        <br />
+        <p><strong>Initial Balance</strong></p>
+        <h4></h4>
+        <br />
+        <button type="button" id="deposit"><strong>DEPOSIT</strong></button>
+        <button type="button" id="withdraw"><strong>WITHDRAW</strong></button>
+      </div>
 
+      <!-- this is where the user will choose to withdraw or deposit -->
+    </div>
+    <div id="bank-deposit">
+      <div id="">
+        <h3>Enter amount to deposit:</h3>
+        <br />
+        <label>date</label><br />
+        <input type="date" /><br />
+        <label>Amount</label><br />
+        <input type="number" id="deposit-amount" /><br />
 
-</body>
+        <button type="button" id="tdeposit"><strong>deposit</strong></button>
+      </div>
+    </div>
 
+    <div id="bank-withdraw">
+      <div id="">
+        <h3>Enter amount to withdraw:</h3>
+        <br />
+        <label>date</label><br />
+        <input type="date" /><br />
+        <label>Amount</label><br />
+        <input type="number" id="withdraw-amount" /><br />
+
+        <button type="button" id="twithdraw"><strong>withdraw</strong></button>
+      </div>
+    </div>
+
+    <!-- this is the page where the user get a confirmation from the bank -->
+    <div id="ac-balance">
+      <h1>Dear Customer,</h1>
+      <h2>Transaction Succcessful !</h2>
+      <h3>Your Account Balance is now:</h3>
+      <h1 id="demo">RWF</h1>
+    </div>
+  </body>
 </html>
