@@ -8,18 +8,26 @@ var ox = function (name) {
 };
 $(document).ready(function () {
 
-            $("form#contact").submit(function (event) {
+            $("form#detail").submit(function (event) {
                         event.preventDefault();
-                        var firstName = $("input#firstname").val();
-                        var lastName = $("input#lastname").val();
-                        var newName = new Name(firstName, lastName);
+                        var fullName = $("input#fullname").val();
+                        var Name = Name(fullName);
 
-                        var inputEmail = $("input#e-mail").val();
-                        var inputNumber = $("input#p-number").val();
                         var inputDeposit = parseInt($("input#initial-deposit").val());
-                        var newAdress = new Adresses(inputEmail, inputNumber, inputDeposit);
+                        $("#user-info").show();
+                        $("form#detail").hide();
+                        $("#user-info h1").text(newName.fullName());
+                        $("#user-info h4").text(newAdress.inputDeposit);
 
+                        $("#deposit").click(function () {
+                            $("#bank-deposit").toggle();
+                            $("#withdraw").hide();
+                        });
 
+                        $("#withdraw").click(function () {
+                            $("#bank-withdraw").toggle();
+                            $("#deposit").hide();
+                        });
 
 
 
