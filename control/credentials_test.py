@@ -95,3 +95,5 @@ def test_save_multiple_credential(self):
         '''
 
         self.assertEqual(Credentials.display_credential(),Credentials.credentials_list)
+if __name__ == '__main__':
+    unittest.main()
