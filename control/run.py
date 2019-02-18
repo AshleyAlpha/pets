@@ -53,3 +53,24 @@ def check_existing_user(username):
     Function that check if a user exists with that username and return a Boolean
     '''
     return Users.user_exist(username)
+    def check_existing_credential(app_name):
+    '''
+    Function that check if a credential exists with that app_name and return a Boolean
+    '''
+    return Credentials.credential_exist(app_name)
+
+def display_user():
+    '''
+    Function that returns all the saved users
+    '''
+    return Users.display_user()
+
+def display_credential():
+    '''
+    Function that returns all the saved credentials
+    '''
+    return Credentials.display_credential()
+
+def main():
+    print("Hello Welcome to your users list. What is your name?")
+    user_name = input()
