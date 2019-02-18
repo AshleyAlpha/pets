@@ -10,10 +10,10 @@ def create_user(email,username,password):
     def create_credential(app_name,password):
     '''
     Function to create a new credential
-    '''
+        '''
     new_credential = Credentials(app_name,password)
     return new_credential
-    
+
 def save_user(user):
     '''
     Function to save new user
