@@ -19,3 +19,10 @@ def test_init(self):
 
         self.assertEqual(self.new_credential.app_name,"facebook")
         self.assertEqual(self.new_credential.password,"miahmamie")
+def test_save_credential(self):
+        '''
+        test_save_credential test case to test if the credential object is saved into
+         the credentials list
+        '''
+        self.new_credential.save_credential() # saving the new credential
+        self.assertEqual(len(Credentials.credentials_list),1) 
