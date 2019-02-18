@@ -11,7 +11,7 @@ class TestUsers(unittest.TestCase):
     def setUp(self):
          #setup method to run before each test cases.
         
-        self.new_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # create contact object
+        self.new_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # create contact object
 
 
     def test_init(self):
@@ -19,9 +19,9 @@ class TestUsers(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_user.email,"mashleyalpha@gmail.com")
-        self.assertEqual(self.new_user.username,"ashleyalpha")
-        self.assertEqual(self.new_user.password,"miahmamie")
+        self.assertEqual(self.new_user.email,"uwinezaandersonne@gmail.com")
+        self.assertEqual(self.new_user.username,"uwinezaadolatha")
+        self.assertEqual(self.new_user.password,"Andersonne1")
     def test_save_user(self):
         '''
         test_save_user test case to test if the user object is saved into
@@ -36,7 +36,7 @@ class TestUsers(unittest.TestCase):
             objects to our users_list
             '''
             self.new_user.save_user()
-            test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
+            test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
             test_user.save_user()
             self.assertEqual(len(Users.users_list),2)
 #setup and class creation up here
@@ -53,7 +53,7 @@ class TestUsers(unittest.TestCase):
             objects to our users_list
             '''
             self.new_user.save_user()
-            test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
+            test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
             test_user.save_user()
             self.assertEqual(len(Users.users_list)
     def test_find_user_by_username(self):
@@ -62,10 +62,10 @@ class TestUsers(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = Users("mashleyalpha@gmail.com","ashleyalpha","miahmamie") # new user
+        test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
         test_user.save_user()
 
-        found_user = Users.find_by_username("ashleyalpha")
+        found_user = Users.find_by_username("uwinezaadolatha")
 
         self.assertEqual(found_user.email,test_user.email)
     
@@ -75,9 +75,29 @@ class TestUsers(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = Users("uwinezaandersonne@gmail.com","UwinezaAdolatha","Andy") # new user
+        test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
         test_user.save_user()
 
         user_exists = Users.user_exist("uwinezaandersonne@gmail.com")
 
         self.assertTrue(user_exists)
+     def test_display_all_user(self):
+        '''
+        method that returns a list of all users saved
+        '''
+
+        self.assertEqual(Users.display_user(),Users.users_list)
+
+    # def test_copy_email(self):
+    #     '''
+    #     Test to confirm that we are copying the email address from a found user
+    #     '''
+
+    #     self.new_user.save_user()
+    #     Users.copy_email("uwinezaadolatha")
+
+    #     self.assertEqual(self.new_user.email,pyperclip.paste())
+
+
+if __name__ == '__main__':
+    unittest.main()
