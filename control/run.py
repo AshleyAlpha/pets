@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.6
-from user import User
+from users import Users
 from credentials import Credentials
 def create_user(email,username,password):
     '''
@@ -7,13 +7,12 @@ def create_user(email,username,password):
     '''
     new_user = Users(email,username,password)
     return new_user
-    def create_credential(app_name,password):
+def create_credential(app_name,password):
     '''
     Function to create a new credential
         '''
     new_credential = Credentials(app_name,password)
     return new_credential
-
 def save_user(user):
     '''
     Function to save new user
@@ -54,7 +53,7 @@ def check_existing_user(username):
     Function that check if a user exists with that username and return a Boolean
     '''
     return Users.user_exist(username)
-    def check_existing_credential(app_name):
+def check_existing_credential(app_name):
     '''
     Function that check if a credential exists with that app_name and return a Boolean
     '''
@@ -166,9 +165,9 @@ def main():
 
                                     print("credential and password deleted")
                             else:
-                                    print("account name does not exis
+                                    print("account name does not exist")
 
-                      elif short_code == "ex":
+                    elif short_code == "ex":
                             print("Thank You. See you .......")
                             break
                     else:
