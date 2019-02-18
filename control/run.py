@@ -124,3 +124,45 @@ def main():
                             print ('\n')
                             print(f"New Credential {app_name} {password} created!!")
                             print ('\n')
+elif short_code == 'dc':
+                            if display_credential():
+                                    print("Here is a list of all your credentials")
+                                    print('\n')
+
+                                    for credential in display_credential():
+                                            print(f"{credential.app_name} {credential.password} .....")
+
+                                    print('\n')
+                            else:
+                                    print('\n')
+                                    print("You dont seem to have any credential saved yet!")
+                                    print('\n')
+
+                    elif short_code == 'fc':
+
+                            print("Enter the appliacation name you want to search for")
+
+                            search_application = input()
+                            if check_existing_credential(search_application):
+                                    search_credential = find_credential(search_application)
+                                    print(f"{search_credential.password} {search_credential.app_name}")
+                                    print('-' * 20)
+
+                                    print(f"app_name.......{search_credential.app_name}")
+                                    print(f"password.......{search_credential.password}")
+                            else:
+                                    print("That credential does not exist")
+
+                    elif short_code == 'del':
+                            print("enter the name of credential you want to delete")
+                            search_application=input()
+
+                            if check_existing_credential(search_application):
+                                    Credential =find_credential(search_application) 
+                                    del_credential(Credential)
+                                    print(f"{Credential.app_name} deleted")
+                                    print('\n')
+
+                                    print("credential and password deleted")
+                            else:
+                                    print("account name does not exis
