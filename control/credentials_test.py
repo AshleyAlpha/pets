@@ -35,3 +35,20 @@ def test_save_multiple_credential(self):
             test_credential = Credentials("facebook","miahmamie") # new credential
             test_credential.save_credential()
             self.assertEqual(len(Credentials.credentials_list),2)
+            #setup and class creation up here
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Credentials.credentials_list = []
+
+# other test cases here
+    def test_save_multiple_credential(self):
+            '''
+            test_save_multiple_credential to check if we can save multiple credential
+            objects to our credentials_list
+            '''
+            self.new_credential.save_credential()
+            test_credential = Credentials("facebook","miahmamie") # new credential
+            test_credential.save_credential()
+            self.assertEqual(len(Credentials.credentials_list),2)
