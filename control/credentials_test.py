@@ -12,3 +12,10 @@ class TestCredentials(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_credential = Credentials("facebook","miahmamie") # create credential object
+def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_credential.app_name,"facebook")
+        self.assertEqual(self.new_credential.password,"miahmamie")
