@@ -72,7 +72,7 @@ def display_credential():
     return Credentials.display_credential()
 
 def main():
-    print("Hello Welcome to your users list. What is your name?")
+    print("Hello Welcome. What is your name?")
     user_name = input()
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
@@ -106,3 +106,21 @@ def main():
     else:
         print(f"password: {passw} or name: {login_name} incorrect. Next time , Please enter password correctly.")  
         sys.exit()
+        while True:
+                    print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, del -delete a credential, ex -exit the credentials list ")
+
+                    short_code = input().lower()
+
+                    if short_code == 'cc':
+                            print("New Credential")
+                            print("-"*10)
+
+                            print ("app_name ....")
+                            app_name = input()
+
+                            print("password ...")
+                            password = input()
+                            save_credential(create_credential(app_name,password)) # create and save new credential
+                            print ('\n')
+                            print(f"New Credential {app_name} {password} created!!")
+                            print ('\n')
