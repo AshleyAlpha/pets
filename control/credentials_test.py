@@ -26,3 +26,12 @@ def test_save_credential(self):
         '''
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credentials.credentials_list),1) 
+def test_save_multiple_credential(self):
+            '''
+            test_save_multiple_credential to check if we can save multiple credential
+            objects to our credentials_list
+            '''
+            self.new_credential.save_credential()
+            test_credential = Credentials("facebook","miahmamie") # new credential
+            test_credential.save_credential()
+            self.assertEqual(len(Credentials.credentials_list),2)
