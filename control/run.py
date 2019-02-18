@@ -89,10 +89,10 @@ def main():
     print("password ...")
     password = input()
 
-    print("now let procceed to login to our account")
+    print(" Login ")
     print('\n')
 
-    print("enter your username (the username must be the same as the first username you entered previously ):")
+    print("enter your username (the username must be the same as the first username you entered before ):")
     print('\n')
     print("enter username")
     login_name=input()
@@ -107,7 +107,7 @@ def main():
         print(f"password: {passw} or name: {login_name} incorrect. Next time , Please enter password correctly.")  
         sys.exit()
         while True:
-                    print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, del -delete a credential, ex -exit the credentials list ")
+                    print("Kindly Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, del -delete a credential, ex -exit the credentials list ")
 
                     short_code = input().lower()
 
@@ -124,9 +124,9 @@ def main():
                             print ('\n')
                             print(f"New Credential {app_name} {password} created!!")
                             print ('\n')
-elif short_code == 'dc':
+                    elif short_code == 'dc':
                             if display_credential():
-                                    print("Here is a list of all your credentials")
+                                    print("The list of all your credentials")
                                     print('\n')
 
                                     for credential in display_credential():
@@ -135,12 +135,12 @@ elif short_code == 'dc':
                                     print('\n')
                             else:
                                     print('\n')
-                                    print("You dont seem to have any credential saved yet!")
+                                    print("You dont have any credential saved yet!")
                                     print('\n')
 
                     elif short_code == 'fc':
 
-                            print("Enter the appliacation name you want to search for")
+                            print("Enter the application name:")
 
                             search_application = input()
                             if check_existing_credential(search_application):
@@ -151,7 +151,7 @@ elif short_code == 'dc':
                                     print(f"app_name.......{search_credential.app_name}")
                                     print(f"password.......{search_credential.password}")
                             else:
-                                    print("That credential does not exist")
+                                    print(" credential does not exist")
 
                     elif short_code == 'del':
                             print("enter the name of credential you want to delete")
@@ -166,3 +166,12 @@ elif short_code == 'dc':
                                     print("credential and password deleted")
                             else:
                                     print("account name does not exis
+
+                      elif short_code == "ex":
+                            print("Thank You. See you .......")
+                            break
+                    else:
+                            print("Couldnt be accessed. Please use the short codes")
+
+if __name__ == '__main__':
+    main()
