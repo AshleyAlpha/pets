@@ -12,57 +12,57 @@ class TestCredentials(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_credential = Credentials("facebook","miahmamie") # create credential object
-def test_init(self):
+    def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credential.app_name,"facebook")
-        self.assertEqual(self.new_credential.password,"miahmamie")
-def test_save_credential(self):
+        self.assertEqual(self.new_credential.app_name,"tumblr")
+        self.assertEqual(self.new_credential.password,"Andersonne")
+    def test_save_credential(self):
         '''
         test_save_credential test case to test if the credential object is saved into
          the credentials list
         '''
         self.new_credential.save_credential() # saving the new credential
         self.assertEqual(len(Credentials.credentials_list),1) 
-def test_save_multiple_credential(self):
-            '''
-            test_save_multiple_credential to check if we can save multiple credential
-            objects to our credentials_list
-            '''
-            self.new_credential.save_credential()
-            test_credential = Credentials("facebook","miahmamie") # new credential
-            test_credential.save_credential()
-            self.assertEqual(len(Credentials.credentials_list),2)
-            #setup and class creation up here
+    def test_save_multiple_credential(self):
+        '''
+        test_save_multiple_credential to check if we can save multiple credential
+        objects to our credentials_list
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credentials("tumblr","Andersonne") # new credential
+        test_credential.save_credential()
+        self.assertEqual(len(Credentials.credentials_list),2)
+    #setup and class creation up here
     def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            Credentials.credentials_list = []
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Credentials.credentials_list = []
 
 # other test cases here
     def test_save_multiple_credential(self):
-            '''
-            test_save_multiple_credential to check if we can save multiple credential
-            objects to our credentials_list
-            '''
-            self.new_credential.save_credential()
-            test_credential = Credentials("facebook","miahmamie") # new credential
-            test_credential.save_credential()
-            self.assertEqual(len(Credentials.credentials_list),2)
-            # More tests above
+        '''
+        test_save_multiple_credential to check if we can save multiple credential
+        objects to our credentials_list
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credentials("tumblr","Andersonne") # new credential
+        test_credential.save_credential()
+        self.assertEqual(len(Credentials.credentials_list),2)
+    # More tests above
     def test_delete_credential(self):
-            '''
-            test_delete_credential to test if we can remove a credential from our credentials list
-            '''
-            self.new_credential.save_credential()
-            test_credential = Credentials("facebook","miahmamie") # new credential
-            test_credential.save_credential()
+        '''
+        test_delete_credential to test if we can remove a credential from our credentials list
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credentials("tumblr","Andersonne") # new credential
+        test_credential.save_credential()
 
-            self.new_credential.delete_credential()# Deleting a credential  object
-            self.assertEqual(len(Credentials.credentials_list),1)
+        self.new_credential.delete_credential()# Deleting a credential  object
+        self.assertEqual(len(Credentials.credentials_list),1)
 
     def test_find_credential_by_app_name(self):
         '''
@@ -70,10 +70,10 @@ def test_save_multiple_credential(self):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credentials("facebook","miahmamie") # new credential
+        test_credential = Credentials("tumblr","Andersonne") # new credential
         test_credential.save_credential()
 
-        found_credential = Credentials.find_by_app_name("facebook")
+        found_credential = Credentials.find_by_app_name("tumblr")
 
         self.assertEqual(found_credential.app_name,test_credential.app_name)
 
@@ -83,10 +83,10 @@ def test_save_multiple_credential(self):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credentials("facebook","miahmamie") # new credential
+        test_credential = Credentials("tumblr","Andersonne") # new credential
         test_credential.save_credential()
 
-        credential_exists = Credentials.credential_exist("faceook")
+        credential_exists = Credentials.credential_exist("tumblr")
 
         self.assertFalse(credential_exists)
     def test_display_all_credential(self):

@@ -11,7 +11,7 @@ class TestUsers(unittest.TestCase):
     def setUp(self):
          #setup method to run before each test cases.
         
-        self.new_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # create contact object
+        self.new_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") 
 
 
     def test_init(self):
@@ -31,36 +31,36 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(len(Users.users_list),1)
     
     def test_save_multiple_user(self):
-            '''
-            test_save_multiple_user to check if we can save multiple user
-            objects to our users_list
-            '''
-            self.new_user.save_user()
-            test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
-            test_user.save_user()
-            self.assertEqual(len(Users.users_list),2)
-#setup and class creation up here
+        '''
+        test_save_multiple_user to check if we can save multiple user
+        objects to our users_list
+        '''
+        self.new_user.save_user()
+        test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
+        test_user.save_user()
+        self.assertEqual(len(Users.users_list),2)
+    #setup and class creation up here
     def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            Users.users_list = []
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Users.users_list = []
 
-# other test cases here
+    # other test cases here
     def test_save_multiple_user(self):
-            '''
-            test_save_multiple_user to check if we can save multiple user
-            objects to our users_list
-            '''
-            self.new_user.save_user()
-            test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
-            test_user.save_user()
-            self.assertEqual(len(Users.users_list)
+        '''
+        test_save_multiple_user to check if we can save multiple user
+        objects to our users_list
+        '''
+        self.new_user.save_user()
+        test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
+        test_user.save_user()
+        self.assertEqual(len(Users.users_list)
+
     def test_find_user_by_username(self):
         '''
         test to check if we can find a user by username and display information
         '''
-
         self.new_user.save_user()
         test_user = Users("uwinezaandersonne@gmail.com","uwinezaadolatha","Andersonne1") # new user
         test_user.save_user()
