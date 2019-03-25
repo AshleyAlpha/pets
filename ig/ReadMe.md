@@ -22,3 +22,9 @@ Run the following command on the terminal: git clone https://github.com/AshleyAl
 * python3.6 -m venv --without-pip virtual,
 * source virtual/bin/activate.
 * then Activate virtual environment.       using python3.6 as default handler.
+
+## Install dependancies
+
+Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
+
+
