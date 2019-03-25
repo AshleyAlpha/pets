@@ -27,4 +27,9 @@ Run the following command on the terminal: git clone https://github.com/AshleyAl
 
 Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
 
+## Database Creation
+* psql
+* CREATE DATABASE igram;
+
+## .env file
 
