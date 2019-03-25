@@ -34,11 +34,11 @@ Install dependancies that will create an environment for the app to run pip3 ins
 ## .env file
 Create .env file and paste the following filling where appropriate:
 
-SECRET_KEY = '<Secret_key>'
-DBNAME = 'igram'
-USER = ''
-PASSWORD = ''
-DEBUG = True
+* SECRET_KEY = '<Secret_key>'
+* DBNAME = 'igram'
+* USER = ''
+* PASSWORD = ''
+* DEBUG = True
 
 ## How to run initial migration
 * python3.6 manage.py makemigrations instag,
