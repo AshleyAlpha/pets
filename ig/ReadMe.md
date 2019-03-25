@@ -45,7 +45,19 @@ DEBUG = True
 * python3.6 manage.py sqlmigrate (number of migration) instag then,
 * python3.6 manage.py migrate.
 
-## 
+## Technologies used
+* Python 3.6
+* HTML
+* django-Bootstrap3
+* Heroku
+* Postgresql
+
+## Support and contact details
+
+ Contact me on mashleyalpha@gmail.com for any feedback
+
+## License
+MIT copyright (c) 2019 *Alpha Mbabazi*
 
 
 
