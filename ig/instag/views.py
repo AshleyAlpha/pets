@@ -1,30 +1,24 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
+# from .forms import ProfileForm, ImageForm, CommentsForm
+from django.contrib.auth.decorators import login_required
+from .models import Profile, Image, Comment
 
-# Create your views here.
+def cheznous(request):
+    return render(request,'index.html')
 
-class Image(models.Model):
-    image = models.ImageField(upload_to='media/Images/')
-    name = models.CharField(max_length=30)
-    caption = models.TextField()
-    profile = models.ForeignKey(Profile)
-    likes = models.DateTimeField(auto_now_add=True)
-    comments = models.TextField()
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = current_user
+            profile.save()
 
-    class Meta:
-        ordering = ('-id',)
+        return redirect('welcome')
 
-    def save_image(self):
-        self.save()
-    
-    def delete_image(self):
-        self.delete()
-    
-    def __str__(self):
-        return self.name
-
-    @classmethod
-    def search_image(cls,search_category):
-        images_category = Image.objects.filter(category__photo_category__icontains=search_category)
-        return images_category
-    
+    else:
+        form = ProfileForm()
+    return render(request, 'profile.html', {"form": form})
