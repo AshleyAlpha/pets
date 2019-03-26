@@ -4,8 +4,9 @@
       {% if user.is_authenticated %}
       <ul>
         <div class="navbar-header">
-          <a class="navbar-brand" href="{% url 'cheznous' %}">HOME</a>
+          <a class="navbar-brand" href="{%url 'nous' %}">HOME</a>
         </div>
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button"
             aria-expanded="false">Account
@@ -13,14 +14,14 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="{%url 'cheznous'%}">Home</a>
+              <a href="{%url 'nous' %}">Home</a>
             </li>
             <li>
               <a href="{%url 'theProfile' user.id%}">View Profile</a>
             </li>
             <li>
-                <a href="{%url 'profile'%}">Add Profile</a>
-              </li>
+              <a href="{%url 'profile'%}">Add Profile</a>
+            </li>
             <li>
               <a href="/accounts/password/change">Change Password</a>
             </li>
@@ -37,5 +38,8 @@
 
       {% endif %}
     </div>
+    <div class="nav navbar-nav navbar-right">
+        <button class="well"><a id="add" href="{%url 'picture'%}">Add Image</a></button>
+      </div>
   </div>
 </nav>
