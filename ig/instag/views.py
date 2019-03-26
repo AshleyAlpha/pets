@@ -13,7 +13,7 @@ def cheznous(request):
 @login_required(login_url='/accounts/login/')
 def images(request,image_id):
     image = Image.objects.get(id = image_id)
-    return render(request,"info.html", {"image":image})
+    return render(request,"img.html", {"image":image})
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
