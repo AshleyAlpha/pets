@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    prof_image = models.ImageField(upload_to = 'viva/')
+    picture = models.ImageField(upload_to = 'viva/')
     bio = models.CharField(max_length =200)
 
     def __str__(self):
@@ -32,11 +32,11 @@ class Profile(models.Model):
 
 class Image(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    image = models.ImageField(upload_to = 'gramys/')
+    image = models.ImageField(upload_to = 'viva/')
     name = models.CharField(max_length =60)
     caption = models.CharField(max_length =200)
     likes= models.IntegerField(default=0)
-    profile = models.ForeignKey(Profile)
+    
    
     def __str__(self):
         return self.name
