@@ -1,4 +1,4 @@
-from .models import Profile
+from .models import Profile,Image,Comment
 from django import forms
 
 class ProfileForm(forms.ModelForm):
@@ -6,12 +6,8 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         exclude = ['user']
 
-class ImageForm(forms.ModelForm):
+class PicForm(forms.ModelForm):
     class Meta:
         model = Image
-        exclude = ['user', 'profile']
+        exclude = ['user','profile']
 
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        exclude = ['user']
