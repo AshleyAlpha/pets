@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
-# from .models import Image, Profile
+
 
 # Create your models here.
 class Profile(models.Model):
@@ -54,11 +54,22 @@ class Image(models.Model):
 
 class Comment(models.Model):
     comment = models.CharField(max_length = 300)
+    posted_on = models.DateTimeField(auto_now=True)
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def save_comment(self):
         self.save()
+    
+    @classmethod
+    def get_comments_by_images(cls, id):
+        comments = Comments.objects.filter(image__pk = id)
+        return comments
 
-    def delete_comment(self):
-        self.delete()
+class Like(models.Model):
+    likes= models.IntegerField(default=0)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.likes

@@ -1,26 +1,63 @@
 {%extends 'base.html'%}
+{% load bootstrap3 %} {% load staticfiles %}
+{% block content %}
 
- {% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
- <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <title>New Profile</title>
+    {{form.media}}
 
-    <div class="row">
-            
-        <img src="{{image.image.url}}"  class="img-responsive" alt="">
-    </div>
-    <div class="row">
-            
-        <h4 class="row"></h4>
-    </div>
-       
-    <div class="row">
-        <h3><strong>Name</strong>: {{image.name}}</h3>
-        <h3><strong>Caption</strong>: {{image.caption}}</h3>
-    </div>
-       
+    {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
+</head>
 
-       
-   
-</div>
-       
+<body>
+    <div class="container">
+
+        
+        <div class="container">
+            <div class="row">
+
+                <img src="{{image.image.url}}" class="img-responsive" alt="">
+            </div>
+
+            <div class="row">
+
+                <h3><strong>Name</strong>: {{image.name}}</h3>
+                <h3><strong>Caption</strong>: {{image.caption}}</h3>
+
+            </div>
+
+
+            <h2 style="text-align:left">comments:</h2>
+            {%for com in comment%}
+
+        <p style="margin-left: 20%; color:cornsilk ">@{{com.user.username}} commented: {{com.comment}} </p>
+
+
+        {%endfor%}
+            <form action="/comments/{{image.id}}/" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-success btn-lg" value="Post">
+            </form>
+
+
+
+        </div>
+
+        {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        {% bootstrap_javascript %} {% endblock %}
+
+</body>
+
+</html>
 {% endblock %}

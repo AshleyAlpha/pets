@@ -16,15 +16,14 @@
 </head>
 
 <body>
-  <div class="container">
-
-    <form action="{%url 'profile'%}" method="post" enctype="multipart/form-data">
-      {%csrf_token%}
-
-      {% bootstrap_form form%}
-      <input type="submit" class="btn btn-success btn-lg" value="Post">
-    </form>
-
+        <body>
+                <div class="container">
+                    
+                    {%for com in comments%}
+                    <p style="margin-left: 20%; color:cornsilk ">@{{com.user.username}} commented: {{com.comment}} </p>
+            
+            
+                    {%endfor%}
     {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% bootstrap_javascript %} {% endblock %}
