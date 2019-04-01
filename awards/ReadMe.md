@@ -61,6 +61,8 @@ Create *.env* file and paste the following filling where appropriate:
 
  Contact me on mashleyalpha@gmail.com for any feedback
 
+## License
+MIT copyright (c) 2019 *Alpha Mbabazi*
 
 
 
