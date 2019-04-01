@@ -57,9 +57,10 @@ Create *.env* file and paste the following filling where appropriate:
 * Heroku
 * psycopg2
 
+## Support and contact details
 
-## License
-MIT copyright (c) 2019 *Alpha Mbabazi*
+ Contact me on mashleyalpha@gmail.com for any feedback
+
 
 
 
