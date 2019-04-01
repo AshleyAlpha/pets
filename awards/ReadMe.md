@@ -15,14 +15,10 @@ At Moringa school we create a lot of projects but we never know those projects r
 * django-admin 
 * Postgres(for DB)
 
+## Clone the Repo
 
+Run the following command on the terminal: git clone https://github.com/AshleyAlpha/award.git && cd awards
 
-## Activate virtual environment
-
-* python3.6 -m venv --without-pip virtual,
-* source virtual/bin/activate.
-* curl htttps://bootstrap.pypa.io/get-pip.py | python
-* then Activate virtual environment.       using python3.6 as default handler.
 
 ## Install dependancies
 
