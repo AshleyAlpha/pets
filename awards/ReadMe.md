@@ -43,15 +43,11 @@ Create *.env* file and paste the following filling where appropriate:
 * PASSWORD = ''
 * DEBUG = True
 
+## How to run initial migration
+* python3.6 manage.py makemigrations instag,
+* python3.6 manage.py sqlmigrate (number of migration) instag then,
+* python3.6 manage.py migrate.
 
-## Technologies used
-* Python 3.6
-* HTML
-* django 1.11
-* django-admin
-* django-Bootstrap3
-* Heroku
-* psycopg2
 
 ## Support and contact details
 
