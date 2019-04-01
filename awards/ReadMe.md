@@ -48,10 +48,15 @@ Create *.env* file and paste the following filling where appropriate:
 * python3.6 manage.py sqlmigrate (number of migration) instag then,
 * python3.6 manage.py migrate.
 
+## Technologies used
+* Python 3.6
+* HTML
+* django 1.11
+* django-admin
+* django-Bootstrap3
+* Heroku
+* psycopg2
 
-## Support and contact details
-
- Contact me on mashleyalpha@gmail.com for any feedback
 
 ## License
 MIT copyright (c) 2019 *Alpha Mbabazi*
