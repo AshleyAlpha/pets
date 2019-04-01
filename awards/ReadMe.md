@@ -30,6 +30,9 @@ Run the following command on the terminal: git clone https://github.com/AshleyAl
 
 Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
 
+## Database Creation
+* psql
+* CREATE DATABASE;
 
 ## .env file
 Create *.env* file and paste the following filling where appropriate:
@@ -40,10 +43,6 @@ Create *.env* file and paste the following filling where appropriate:
 * PASSWORD = ''
 * DEBUG = True
 
-## How to run initial migration
-* python3.6 manage.py makemigrations instag,
-* python3.6 manage.py sqlmigrate (number of migration) instag then,
-* python3.6 manage.py migrate.
 
 ## Technologies used
 * Python 3.6
