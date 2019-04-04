@@ -1,0 +1,29 @@
+body {
+    background-color: teal;
+}
+
+.ig {
+    text-align: center;
+}
+
+.well {
+    color: teal;
+    background-color: cornsilk;
+}
+
+#add {
+    color: teal;
+    font-style: calibri;
+    font-size: 15px;
+    float: right;
+}
+
+.row {
+    color: cornsilk
+}
+
+#igram {
+    color: teal;
+    background-color: cornsilk;
+    text-align: center;
+}

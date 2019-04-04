@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<body>
+    <div class="container">
+
+        <div class="well">
+            <h1 class="ig">Awwards</h1>
+        </div>
+        {% for pro in project %}
+
+        <a href="/images/{{pro.id}}"><img src="{{pro.image.url}}" alt="Image"></a>
+
+        {% endfor %}
+
+    </div>
+</body>
+{% endblock %}

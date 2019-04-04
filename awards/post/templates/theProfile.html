@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+<html>
+
+<body>
+    <div class="container">
+
+        <p><strong>{{profiles.first_name}} {{profiles.last_name}}</strong></p>
+
+        <img src="{{profiles.profile_pic.url}}" alt="Image" style=" border-radius: 8px;">
+        {% autoescape on %}
+        <h3><strong>{{profiles.bio| safe}}</strong></h3>
+        {% endautoescape %}
+          
+
+    </div>
+
+</body>
+
+</html>
+{% endblock %}

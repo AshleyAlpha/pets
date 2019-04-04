@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile,Project,Comments,Votes
+from .models import Profile,Project,Votes
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -11,10 +11,6 @@ class ProjectForm(forms.ModelForm):
         model = Project
         exclude = ['user','profile','posted_on']
 
-class CommentsForm(forms.ModelForm):
-    class Meta:
-        model = Comments
-        exclude = ['user','project','posted_on']
 
 class VotesForm(forms.ModelForm):
     class Meta:

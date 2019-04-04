@@ -49,23 +49,6 @@ class Project(models.Model):
         projects = cls.objects.all()
         return projects
 
-class Comments(models.Model):
-    comment = models.CharField(max_length = 500)
-    posted_on = models.DateTimeField(auto_now=True)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def save_comment(self):
-        self.save()
-
-    def delete_comment(self):
-        self.delete()
-
-    @classmethod
-    def get_comments_by_projects(cls, id):
-        comments = Comments.objects.filter(project__pk = id)
-        return comments
-
 class Votes(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     posted_on = models.DateTimeField(auto_now_add=True,)
