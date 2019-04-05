@@ -1,63 +1,68 @@
 {%extends 'base.html'%}
 
- {% block content %}
+{% block content %}
 
- <body>
+<body>
 
- <div class="container">
-        <center><a href="{{project.project_url}}" target="_blank"><h1>{{project.project_name}}</h1></a></center>
-   
-    <img src="{{project.image.url}}"  class="img-responsive" alt="">
+    <div class="container">
+        <center><a href="{{project.project_url}}" target="_blank">
+                <h1>{{project.project_name}}</h1>
+            </a></center>
+        <img src="{{project.image.url}}" class="img-responsive" alt="">
 
-    <h4 style="background-color: rgb(192, 183, 183);width:15%;border-radius: 50px;padding: 30px;">DESIGN: {{design}}</h4>
-    <h4 style="background-color: rgb(187, 179, 179);width:15%;border-radius: 50px;padding: 30px;">USABILITY: {{usability}}</h4>
-    <h4 style="background-color: rgb(180, 174, 174);width:15%;border-radius: 50px;padding: 30px;">CONTENT: {{content}}</h4>
+        <div id="right">
+            <h4 style="background-color: cornsilk;width:17%;padding: 20px;">Design: {{design}}</h4>
 
-    <div class="row">
-          
-     <div class="col-md-5">
-        <div class="row" style="color:cornsilk;font-family: calibri;">
-                    <h1 class="text-center" class="well">{{project.project_name}} By <strong>{{project.user}}</strong></h1>
-                    
-                    
-        
-          <div style="color:cornsilk;font-family: calibri;">
-            <h4 ><strong>Posted on: {{project.posted_on}}</strong></h4>
-            
+            <h4 style="background-color:  cornsilk;width:17%;padding: 20px;">Usability: {{usability}}</h4>
+
+            <h4 style="background-color:  cornsilk;width:17%;padding: 20px;">Content: {{content}}</h4>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-5">
+
+                <div class="row" style="color:cornsilk;font-family: calibri;">
+                    <h3 class="text-center" class="well">{{project.project_name}} By
+                        <strong>{{project.user}}</strong>
+                    </h3>
+                    <div style="color:cornsilk;font-family: calibri;">
+                        <h4><strong>Posted on: {{project.posted_on}}</strong></h4>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6"><button class="btn btn-info"><a href="/votes/{{project.id}}">RATE</a></button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h3>Description:</h3>
+                <div class="row" style="color:rgb(99, 110, 110);font-family: calibri;">
+                    <h4><strong>{% autoescape on %}
+                            {{project.description| safe}}
+                            {% endautoescape %}
+                        </strong></h4>
+                </div>
+
+                <h3>These are Technologies used to develop this app:</h3>
+                <div>
+                    <h4><strong>{% autoescape on %}
+                            {{project.technologies_used| safe}}
+                            {% endautoescape %}
+                        </strong></h4>
+                </div>
+
+            </div>
         </div>
     </div>
 
-     </div>
-     <div class="col-md-7">
-            
-            <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
-                <h4 ><strong>{% autoescape on %}
-                    {{project.description| safe}}
-                   {% endautoescape %}
-                </strong></h4>
-            </div>
-               
-            <div style="color:rgb(99, 110, 110);font-family: monospace;">
-                <h4 ><strong>{% autoescape on %}
-                    {{project.technologies_used| safe}}
-                   {% endautoescape %}
-                </strong></h4>
-            </div>
-        
-        </div>  
-    </div>       
-                    
-                
-        <div class="row">         
- 
-                <div class="col-md-6"><button class="btn btn-info"><a href="/votes/{{project.id}}">RATE</a></button></div>  
-       
-            </div>    
-           
-        </div>
-               
-        {% endblock %}
-   
-</div>       
-    
+    {% endblock %}
+
+    </div>
+
 </body>
