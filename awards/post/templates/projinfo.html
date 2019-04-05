@@ -5,25 +5,29 @@
 <body>
 
     <div class="container">
-        <center><a href="{{project.project_url}}" target="_blank">
-                <h1>{{project.project_name}}</h1>
-            </a></center>
-        <img src="{{project.image.url}}" class="img-responsive" alt="">
+        <div class="row">
+            <center><a href="{{project.project_url}}" target="_blank">
+                    <div class="well">
+                        <h1>{{project.project_name}}</h1>
+                    </div>
+                </a></center>
+            <div class="col-md-6">
+                <img src="{{project.image.url}}" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6" id="right">
+                <h4 style="background-color: cornsilk;width:30%;padding: 20px;">Design: {{design}}</h4>
 
-        <div id="right">
-            <h4 style="background-color: cornsilk;width:17%;padding: 20px;">Design: {{design}}</h4>
+                <h4 style="background-color:  cornsilk;width:30%;padding: 20px;">Usability: {{usability}}</h4>
 
-            <h4 style="background-color:  cornsilk;width:17%;padding: 20px;">Usability: {{usability}}</h4>
-
-            <h4 style="background-color:  cornsilk;width:17%;padding: 20px;">Content: {{content}}</h4>
+                <h4 style="background-color:  cornsilk;width:30%;padding: 20px;">Content: {{content}}</h4>
+            </div>
         </div>
-
         <div class="row">
 
             <div class="col-md-5">
 
                 <div class="row" style="color:cornsilk;font-family: calibri;">
-                    <h3 class="text-center" class="well">{{project.project_name}} By
+                    <h3 class="text-center" class="well">{{project.project_name}} posted By
                         <strong>{{project.user}}</strong>
                     </h3>
                     <div style="color:cornsilk;font-family: calibri;">
@@ -34,7 +38,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-6"><button class="btn btn-info"><a href="/votes/{{project.id}}">RATE</a></button>
+                    <div class="col-md-6"><button class="btn btn-info"><a href="/votes/{{project.id}}">VOTE</a></button>
                     </div>
 
                 </div>
