@@ -18,10 +18,6 @@ body {
     float: right;
 }
 
-.row {
-    color: cornsilk
-}
-
 #igram {
     color: teal;
     background-color: cornsilk;
@@ -33,6 +29,7 @@ a{
 a:hover{
     color: cyan;
 }
-#right{
-    float: right;
+h3{
+    color: cornsilk;
 }
+
