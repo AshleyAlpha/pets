@@ -9,8 +9,9 @@ urlpatterns = [
     url(r'^theProfile/(\d+)', views.theProfile, name='theProfile'),
     url(r'^project/', views.project, name='project'),
     url(r'^images/(\d+)',views.images, name ='images'),
-    # url(r'^comments/(\d+)', views.comments, name='comments'),
-    # url(r'^like/',views.like,name ='like'),
+    url(r'^votes/(\d+)',views.votes,name="votes"),
+    url(r'^search/', views.search, name='search'),    
+    
 
 
 

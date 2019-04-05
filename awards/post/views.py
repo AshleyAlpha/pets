@@ -90,9 +90,9 @@ def votes(request,id):
                 return redirect('project')      
     else:
         form = VotesForm()
-        return render(request, 'new-vote.html', {"form":form,'post':post,'user':current_user,'votes':votes})
+        return render(request, 'nuevaVote.html', {"form":form,'post':post,'user':current_user,'votes':votes})
 
-def search_results(request):
+def search(request):
 
     if 'project' in request.GET and request.GET["project"]:
         search_term = request.GET.get("project")
