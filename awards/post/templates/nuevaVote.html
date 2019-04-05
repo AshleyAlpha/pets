@@ -23,29 +23,29 @@
         
         <div class="container" id="index"   >
                 
-                        <div class="row" style="color:rgb(108, 122, 122);font-family: monospace;">
+                        <div class="row" style="color:rgb(108, 122, 122);font-family: calibri;">
                             <h1 class="text-center" class="well">{{post.name}}</h1>
                             <br>
-                            <h3 class="text-center">Added <strong>{{post.user}}</strong></h3>
+                            <h3 class="text-center">  <strong>{{post.user}} </strong>Added:</h3>
                         </div>
             
                 <div class="row">
                     <img src="{{post.image.url}}"  class="img-responsive" alt="">
                 </div>
                 
-                <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
+                <div class="row" style="color:rgb(99, 110, 110);font-family: calibri;">
                     <h4 ><strong>Posted on: {{post.posted_on}}</strong></h4>
                 </div>
             
-                <a href="{{post.project_url}}" target="_blank">Awward</a>
-                <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
+                <a href="{{post.project_url}}" target="_blank">Website</a>
+                <div class="row" style="color:rgb(99, 110, 110);font-family: calibri;">
                     <h4 ><strong>{% autoescape on %}
                         {{project.description| safe}}
                        {% endautoescape %}
                     </strong></h4>
                 </div>
                    
-                <div class="row" style="color:rgb(99, 110, 110);font-family: monospace;">
+                <div class="row">
                     <h4 ><strong>{% autoescape on %}
                         {{project.technologies_used| safe}}
                        {% endautoescape %}
