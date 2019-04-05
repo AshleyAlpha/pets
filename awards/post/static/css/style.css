@@ -27,3 +27,12 @@ body {
     background-color: cornsilk;
     text-align: center;
 }
+a{
+    color: cornsilk;
+}
+a:hover{
+    color: cyan;
+}
+#right{
+    float: right;
+}
