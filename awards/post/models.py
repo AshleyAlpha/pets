@@ -39,8 +39,11 @@ class Project(models.Model):
     project_url = models.CharField(max_length=100)
     technologies_used = HTMLField()
     posted_on = models.DateTimeField(auto_now_add=True,)
-
-
+    
+    @classmethod
+    def search_project(cls,search_term):
+        project = cls.objects.filter(project_name__icontains = search_term)
+        return project
     def save_projects(self):
         self.save()
     
