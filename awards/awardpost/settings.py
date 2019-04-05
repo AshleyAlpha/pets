@@ -60,8 +60,6 @@ SECRET_KEY = 'fa06=9r=6rti02vg!%()-u2td3-h9ij%4a^%5xct&j-lik(oia'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
