@@ -11,6 +11,8 @@
     {% endif %}
 
   </div>
+  {% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endblock %}
 
   <div class="row">
 
