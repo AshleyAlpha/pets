@@ -5,8 +5,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$',views.cheznous, name='nous'),
-    
-
+    url(r'^images/(\d+)',views.images, name ='images'),
+    url(r'^petpic/',views.petpic, name ='petpic'),
 
 
 ]

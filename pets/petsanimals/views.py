@@ -14,23 +14,23 @@ def cheznous(request):
 
 
 @login_required(login_url='/accounts/login/')
-def images(request,image_id):
+def images(request,pet_id):
     current_user = request.user
-    image = Image.objects.get(id = image_id)
-    post = Image.objects.get(id=image_id)
-    comment = Comment.objects.filter(id = image_id).all()
-    print(comment)
-    if request.method == 'POST':
-        form = CommentForm(request.POST,request.FILES)
-        if form.is_valid():
-            comment = form.cleaned_data['comment']
-            new_comment = Comment(comment = comment,user =current_user,image=post)
-            new_comment.save()
+    image = Pet.objects.get(id = pet_id)
+    post = Pet.objects.get(id=pet_id)
+    # comment = Comment.objects.filter(id = image_id).all()
+    # print(comment)
+    # if request.method == 'POST':
+    #     form = CommentForm(request.POST,request.FILES)
+    #     if form.is_valid():
+    #         comment = form.cleaned_data['comment']
+    #         new_comment = Comment(comment = comment,user =current_user,image=post)
+    #         new_comment.save()
                 
             
-    else:
-        form = CommentForm()
-    return render(request,"img.html", {"form": form,"image":image,"comment":comment})
+    # else:
+    #     form = CommentForm()
+    return render(request,"picture.html", {"image":image})
 
 def petpic(request):
     current_user = request.user
@@ -43,5 +43,5 @@ def petpic(request):
 
     else:
         form = PicForm()
-    return render(request, 'picture.html', {"form": form})
+    return render(request, 'petpic.html', {"form": form})
 
