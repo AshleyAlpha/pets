@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$',views.cheznous, name='nous'),
     url(r'^images/(\d+)',views.images, name ='images'),
     url(r'^petpic/',views.petpic, name ='petpic'),
+    url(r'^Bookform/',views.Bookform, name ='petpic'),
 
 
 ]

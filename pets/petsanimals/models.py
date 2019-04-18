@@ -7,6 +7,8 @@ class Pet(models.Model):
     pet_name = models.CharField(max_length=30)
     pet_sex = models.CharField(max_length=30)
     pet_age = models.CharField(max_length=30)
+    pet_details = models.CharField(max_length=30,null=True)
+    pet_price = models.CharField(max_length=30,null=True)
 
 class Client(models.Model):
     First_name = models.CharField(max_length=30)
@@ -32,6 +34,10 @@ class Client(models.Model):
     def search_by_username(cls,search_term):
         profiles = cls.objects.filter(first_name__icontains=search_term)
         return profiles
+
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
 
 
 

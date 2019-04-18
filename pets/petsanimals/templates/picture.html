@@ -1,0 +1,22 @@
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% for pe in image %}
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 style="color:teal;"><strong>pet_sex: </strong>{{pe.pet_sex}}</h5>
+        <h5 class="modal-title"><strong>pet_age: </strong>{{pe.pet_age}}</h5>
+        <h5 class="modal-title"><strong>pet_name: </strong>{{pe.pet_name}}</h5>
+    </div>
+    <div class="modal-body">
+        <img src="{{img.image.url}}" alt="Image" width='400' length='500'>
+        <p><strong>pet_details: </strong>{{pe.details}}</p><br>
+        <h5><strong>pet_price: </strong>{{pe.pet_price}}</h5>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"
+            style="background-color:teal;color:snow;">BookNow</button>
+    </div>
+</div>
+{% endfor %}

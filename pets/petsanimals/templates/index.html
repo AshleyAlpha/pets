@@ -5,16 +5,35 @@
 
 <body>
     <div class="container">
-            
+
         <div class="well">
-        <h1 class="ig">Pets</h1>
+            <h1 class="ig">Pets</h1>
         </div>
         {% for pro in images %}
 
         <a href="/images/{{pro.id}}"><img src="{{pro.image.url}}" alt="Image"></a>
-        
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 style="color:teal;"><strong>pet_sex: </strong>{{pro.pet_sex}}</h5>
+                <h5 class="modal-title"><strong>pet_age: </strong>{{pro.pet_age}}</h5>
+                <h5 class="modal-title"><strong>pet_name: </strong>{{pro.pet_name}}</h5>
+            </div>
+            <div class="modal-body">
+
+                <p><strong>pet_details: </strong>{{pro.pet_details}}</p><br>
+                <h5><strong>pet_price: </strong>{{pro.pet_price}}</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"
+                    style="background-color:teal;color:snow;"><a href="{% %}"></a>BookNow</button>
+            </div>
+        </div>
+
         {% endfor %}
-        
+
     </div>
 </body>
 {% endblock %}

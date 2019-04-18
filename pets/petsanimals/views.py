@@ -16,19 +16,9 @@ def cheznous(request):
 @login_required(login_url='/accounts/login/')
 def images(request,pet_id):
     current_user = request.user
-    image = Pet.objects.get(id = pet_id)
-    post = Pet.objects.get(id=pet_id)
-    # comment = Comment.objects.filter(id = image_id).all()
-    # print(comment)
-    # if request.method == 'POST':
-    #     form = CommentForm(request.POST,request.FILES)
-    #     if form.is_valid():
-    #         comment = form.cleaned_data['comment']
-    #         new_comment = Comment(comment = comment,user =current_user,image=post)
-    #         new_comment.save()
-                
-            
-    # else:
+    image = Pet.objects.filter(id = pet_id).all()
+
+    
     #     form = CommentForm()
     return render(request,"picture.html", {"image":image})
 
@@ -44,4 +34,20 @@ def petpic(request):
     else:
         form = PicForm()
     return render(request, 'petpic.html', {"form": form})
+
+def Bookform(request,id):
+        current_user = request.user
+        post = Image.objects.get(id=id)
+        clients = Client.objects.filter(image=post)
+        if request.method == 'POST':
+                form = BookingForm(request.POST,request.FILES)
+                if form.is_valid():
+                        client = form.cleaned_data['client']
+                        new_client = Client(client = client,user =current_user,image=post)
+                        new_client.save()
+                    
+                
+        else:
+                    form = BookingForm()
+        return render(request, 'index.html', {"form":form})
 
